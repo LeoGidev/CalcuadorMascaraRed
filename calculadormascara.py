@@ -1,3 +1,8 @@
+import tkinter
+from tkinter import*
+from tkinter import ttk
+
+
 def calcular_mascara_red(x):
     # Calcula los octetos completos y los bits adicionales
     octetos_completos = x // 8
