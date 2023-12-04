@@ -39,31 +39,31 @@ def calcular_mascara_red():
 
 #creamos la ventana del programa
 root = tk.Tk()
-root.geometry("400x240")
+root.geometry("200x400")
 root.title("Calculador de máscara")
 
 label = Label(root, text="Escribe el numero sin la  barra '/'")
-label.grid(row=0,column=0)
+label.grid(row=0,column=0, padx=15, pady=15, )
 #label .pack(side=LEFT)
 
 
 
 #creamos la variable entrada y la poscionamos
 
-textExample=tk.Text(root, height=1, width=15)
-textExample.grid(row=0,column=1)
+textExample=tk.Text(root, height=1, width=15, border=5)
+textExample.grid(row=1,column=0, padx=15, pady=15)
 #textExample.pack()
 btnRead=tk.Button(root, height=1, width=10, text="Calcular", command=calcular_mascara_red)
-btnRead.grid(row=1,column=2)
+btnRead.grid(row=5,column=0, padx=15, pady=15)
 
 #btnRead.pack()
 
 label = Label(root, text="RESPUESTA: ")
-label.grid(row=2,column=0)
+label.grid(row=2,column=0, padx=15, pady=15)
 
 respuesta = tk.Entry(root)
 
-respuesta.grid(row=2,column=1)
+respuesta.grid(row=3,column=0, padx=15, pady=15)
 #respuesta.pack()
 
 
