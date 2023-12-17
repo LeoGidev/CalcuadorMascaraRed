@@ -3,4 +3,4 @@
 
 <p>La siguiente es una herramienta que calcula la mascara de red colocando el numero del /</p>
 
-<img src="caluclador.png">
+<img src="calculador.png">
