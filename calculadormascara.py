@@ -26,15 +26,15 @@ def create_labels_and_entries(self):
     self.texto.bind('<KeyRelease>', self.check_entries)
 
 def create_buttons(self):
-    self.btn1 = ttk.Button(self.root, text="Abrir", command=self.buscador1, state='disabled')
+    self.btn1 = ttk.Button(self.root, text="Abrir", command=self.mascara, state='disabled')
     self.btn1.grid(row=2, column=2, sticky='w', pady=10, padx=10)
      
 
 
 
 
-def calcular_mascara_red():
-    x=int(textExample.get(1.0, tk.END+"-1c"))
+def mascara(self):
+    x = int(self.texto.get("1.0", "end"))
     if x < 33  and x > -1:
 
         # Calcula los octetos completos y los bits adicionales
@@ -52,14 +52,14 @@ def calcular_mascara_red():
         while len(mascara) < 4:
             mascara.append(0)
     
-        respuesta.delete(0, END)
+        #respuesta.delete(0, END)
 
-        respuesta.insert(10,".".join(map(str, mascara)))
-        #return ".".join(map(str, mascara))
+        #respuesta.insert(10,".".join(map(str, mascara)))
+        ##return ".".join(map(str, mascara))
     else:
         mascara = "el máximo valor de máscara es 32 y el minimo es 0"
-        respuesta.delete(0, END)
-        respuesta.insert(10,mascara)
+        #respuesta.delete(0, END)
+        #respuesta.insert(10,mascara)
     
 
     
@@ -76,7 +76,7 @@ def calcular_mascara_red():
 
 if __name__ == "__main__":
     root = ThemedTk(theme="equilux")
-    app = calcular_mascara_red(root)
+    app = mascara(root)
     root.mainloop()
 
 
