@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter as tk
+import os
 
 class calculadoraRED:
     def __init__(self, root):
@@ -10,6 +11,7 @@ class calculadoraRED:
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
         self.root.rowconfigure(3, weight=1)
+        self.root.iconbitmap(os.path.abspath("icon.ico"))
 
 
 
