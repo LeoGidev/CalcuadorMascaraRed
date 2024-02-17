@@ -1,7 +1,11 @@
 from tkinter import *
 import tkinter as tk
 
-
+class calculadoraRED:
+    def __init__(self, root):
+        self.root=self
+        self.root.title=('RedApp')
+        self.root.geometry('800x600')
 
 
 
