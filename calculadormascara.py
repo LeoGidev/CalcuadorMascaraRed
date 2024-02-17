@@ -6,6 +6,10 @@ class calculadoraRED:
         self.root=self
         self.root.title=('RedApp')
         self.root.geometry('800x600')
+        self.root.set_theme('equilux')  
+        self.root.columnconfigure(0, weight=0)
+        self.root.columnconfigure(1, weight=1)
+        self.root.rowconfigure(3, weight=1)
 
 
 
