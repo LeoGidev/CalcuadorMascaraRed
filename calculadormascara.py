@@ -4,14 +4,20 @@ from ttkthemes import ThemedTk
 
 class calculadoraRED:
     def __init__(self, root):
-        self.root=self
-        self.root.title=('RedApp')
-        self.root.geometry('800x600')
+        self.root = root
+        self.root.title('Compi App')
+        self.root.geometry("900x600")
+        #self.root.config(background="white")
         self.root.set_theme('equilux')  
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
         self.root.rowconfigure(3, weight=1)
+        #Configuración del icono
         self.root.iconbitmap(os.path.abspath("icon.ico"))
+        #framemascara
+        self.nav_bar = ttk.Frame(self.root, height=50)
+        self.nav_bar.pack(fill='x')
+        
         self.create_widgets()
 
     def create_widgets(self):
@@ -20,14 +26,15 @@ class calculadoraRED:
         #self.create_result_frame()
 
     def create_labels_and_entries(self):
-        Label(self.root, text="Ingrese La máscara en formato Slash").grid(row=2, column=0, pady=10, padx=10)
-        self.texto = Text(self.root, height=1, width=10)
-        self.texto.grid(row=2, column=1, sticky='w', pady=10, padx=10)
-        self.texto.bind('<KeyRelease>', self.check_entries)
+        # Crear etiqueta y entrada dentro de la barra de navegación
+        Label(self.nav_bar, text="Ingrese La máscara en formato Slash", bg="#3b5998", fg="white").grid(row=0, column=0, pady=10, padx=10)
+        self.texto = Text(self.nav_bar, height=1, width=10)
+        self.texto.grid(row=0, column=1, sticky='w', pady=10, padx=10)
 
     def create_buttons(self):
-        self.btn1 = ttk.Button(self.root, text="Abrir", command=self.mascara, state='disabled')
-        self.btn1.grid(row=2, column=2, sticky='w', pady=10, padx=10)
+        self.btn1 = ttk.Button(self.root, text="Abrir", command=self.mascaraRed, state='disabled')
+        self.btn1.pack(side='left', padx=10)  # Cambié 'grid' por 'pack'
+
      
 
 
