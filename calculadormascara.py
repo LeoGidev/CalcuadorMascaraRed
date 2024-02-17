@@ -12,6 +12,13 @@ class calculadoraRED:
         self.root.columnconfigure(1, weight=1)
         self.root.rowconfigure(3, weight=1)
         self.root.iconbitmap(os.path.abspath("icon.ico"))
+        self.create_widgets()
+
+def create_widgets(self):
+        self.create_labels_and_entries()
+        self.create_buttons()
+        self.create_result_frame()
+
 
 
 
@@ -47,14 +54,12 @@ def calcular_mascara_red():
     
 
 
-#creamos la ventana del programa
-root = tk.Tk()
-root.geometry("200x400")
-root.title("Calculador de máscara")
-
-label = Label(root, text="Escribe el numero sin la  barra '/'")
-label.grid(row=0,column=0, padx=15, pady=15, )
-#label .pack(side=LEFT)
+def create_labels_and_entries(self):
+    Label(self.root, text="Máscara en octetos").grid(row=2, column=0, pady=10, padx=10)
+    self.texto = Text(self.root, height=1, width=10)
+    self.texto.grid(row=0, column=1, sticky='w', pady=10, padx=10)
+    self.texto.bind('<KeyRelease>', self.check_entries)
+     
 
 
 
