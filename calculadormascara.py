@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as tk
 import os
+from ttkthemes import ThemedTk
 
 class calculadoraRED:
     def __init__(self, root):
@@ -63,29 +64,16 @@ def create_labels_and_entries(self):
 
 
 
-#creamos la variable entrada y la poscionamos
-
-textExample=tk.Text(root, height=1, width=15, border=5)
-textExample.grid(row=1,column=0, padx=15, pady=15)
-#textExample.pack()
-btnRead=tk.Button(root, height=1, width=10, text="Calcular", command=calcular_mascara_red)
-btnRead.grid(row=5,column=0, padx=15, pady=15)
-
-#btnRead.pack()
-
-label = Label(root, text="RESPUESTA: ")
-label.grid(row=2,column=0, padx=15, pady=15)
-
-respuesta = tk.Entry(root)
-
-respuesta.grid(row=3,column=0, padx=15, pady=15)
-#respuesta.pack()
 
 
 
 
 
-root.mainloop()
+if __name__ == "__main__":
+    root = ThemedTk(theme="equilux")
+    app = ComparadorApp(root)
+    root.mainloop()
+
 
 
 
