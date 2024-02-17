@@ -1,5 +1,4 @@
-from tkinter import *
-import tkinter as tk
+from tkinter import Tk, Label, Text, Button, filedialog, Frame, ttk
 import os
 from ttkthemes import ThemedTk
 
@@ -16,9 +15,20 @@ class calculadoraRED:
         self.create_widgets()
 
 def create_widgets(self):
-        self.create_labels_and_entries()
-        self.create_buttons()
-        self.create_result_frame()
+    self.create_labels_and_entries()
+    self.create_buttons()
+    self.create_result_frame()
+
+def create_labels_and_entries(self):
+    Label(self.root, text="Ingrese La máscara en formato Slash").grid(row=2, column=0, pady=10, padx=10)
+    self.texto = Text(self.root, height=1, width=10)
+    self.texto.grid(row=2, column=1, sticky='w', pady=10, padx=10)
+    self.texto.bind('<KeyRelease>', self.check_entries)
+
+def create_buttons(self):
+    self.btn1 = ttk.Button(self.root, text="Abrir", command=self.buscador1, state='disabled')
+    self.btn1.grid(row=2, column=2, sticky='w', pady=10, padx=10)
+     
 
 
 
@@ -55,12 +65,7 @@ def calcular_mascara_red():
     
 
 
-def create_labels_and_entries(self):
-    Label(self.root, text="Máscara en octetos").grid(row=2, column=0, pady=10, padx=10)
-    self.texto = Text(self.root, height=1, width=10)
-    self.texto.grid(row=0, column=1, sticky='w', pady=10, padx=10)
-    self.texto.bind('<KeyRelease>', self.check_entries)
-     
+
 
 
 
@@ -71,7 +76,7 @@ def create_labels_and_entries(self):
 
 if __name__ == "__main__":
     root = ThemedTk(theme="equilux")
-    app = ComparadorApp(root)
+    app = calcular_mascara_red(root)
     root.mainloop()
 
 
