@@ -44,30 +44,32 @@ class calculadoraRED:
 
     def mascaraRed(self):
         x = int(self.texto.get("1.0", "end"))
-        x = x.strip("\n")
-        if x < 33  and x > -1:
+        #x = x.strip("\n")
+        print(x)
+        
+        #if x < 33  and x > -1:
 
             # Calcula los octetos completos y los bits adicionales
-            octetos_completos = x // 8
-            bits_adicionales = x % 8
+           # octetos_completos = x // 8
+            #bits_adicionales = x % 8
 
             # Construye la máscara de red
-            mascara = [255] * octetos_completos
+            #mascara = [255] * octetos_completos
 
-            if bits_adicionales > 0:
-                valor_bits_adicionales = 2 ** (8 - bits_adicionales) - 1
-                mascara.append(valor_bits_adicionales)
+            #if bits_adicionales > 0:
+                #valor_bits_adicionales = 2 ** (8 - bits_adicionales) - 1
+                #mascara.append(valor_bits_adicionales)
         
             # Completa la máscara de red con ceros
-            while len(mascara) < 4:
-                mascara.append(0)
+            #while len(mascara) < 4:
+                #mascara.append(0)
         
             #respuesta.delete(0, END)
 
             #respuesta.insert(10,".".join(map(str, mascara)))
             ##return ".".join(map(str, mascara))
-        else:
-            mascara = "el máximo valor de máscara es 32 y el minimo es 0"
+        #else:
+            #mascara = "el máximo valor de máscara es 32 y el minimo es 0"
             #respuesta.delete(0, END)
             #respuesta.insert(10,mascara)
     
