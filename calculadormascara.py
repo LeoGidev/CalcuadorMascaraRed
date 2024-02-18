@@ -43,7 +43,7 @@ class calculadoraRED:
 
 
     def mascaraRed(self):
-        x = int(self.texto.get("1.0", "end"))
+        x = self.texto.get("1.0", "end")
         #x = x.strip("\n")
         print(x)
         
