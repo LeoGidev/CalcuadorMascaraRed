@@ -31,10 +31,12 @@ class calculadoraRED:
         self.texto = Text(self.nav_bar, height=1, width=10)
         self.texto.grid(row=0, column=1, sticky='w', pady=10, padx=10)
 
+    
+    
     def create_buttons(self):
-        self.btn1 = ttk.Button(self.root, text="convertir", command=self.mascaraRed)
-        self.btn1.pack(side='left', padx=10)  # Cambié 'grid' por 'pack'
-
+            # Colocar el botón dentro del nav_bar
+            self.btn1 = ttk.Button(self.nav_bar, text="Abrir", command=self.mascaraRed)
+            self.btn1.pack(side='left', padx=10)  # Ajusta según tus preferencias
      
 
 
