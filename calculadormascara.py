@@ -44,7 +44,8 @@ class calculadoraRED:
 
     def mascaraRed(self):
         x = self.texto.get("1.0", "end")
-        #x = x.strip("\n")
+        x = x.strip("\n")
+        x=int(x)
         print(x)
         
         if x < 33  and x > -1:
