@@ -35,7 +35,7 @@ class calculadoraRED:
     
     def create_buttons(self):
             # Colocar el botón dentro del nav_bar
-            self.btn1 = ttk.Button(self.nav_bar, text="Abrir", command=self.mascaraRed)
+            self.btn1 = ttk.Button(self.nav_bar, text="convertir", command=self.mascaraRed)
             self.btn1.pack(side='left', padx=10)  # Ajusta según tus preferencias
      
 
@@ -44,6 +44,7 @@ class calculadoraRED:
 
     def mascaraRed(self):
         x = int(self.texto.get("1.0", "end"))
+        x = x.strip("\n")
         if x < 33  and x > -1:
 
             # Calcula los octetos completos y los bits adicionales
