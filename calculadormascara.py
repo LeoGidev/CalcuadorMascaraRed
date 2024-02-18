@@ -47,10 +47,12 @@ class calculadoraRED:
         #x = x.strip("\n")
         print(x)
         
-        #if x < 33  and x > -1:
+        if x < 33  and x > -1:
+            
+            print('holq')
 
             # Calcula los octetos completos y los bits adicionales
-           # octetos_completos = x // 8
+            #octetos_completos = x // 8
             #bits_adicionales = x % 8
 
             # Construye la máscara de red
@@ -60,7 +62,7 @@ class calculadoraRED:
                 #valor_bits_adicionales = 2 ** (8 - bits_adicionales) - 1
                 #mascara.append(valor_bits_adicionales)
         
-            # Completa la máscara de red con ceros
+            #Completa la máscara de red con ceros
             #while len(mascara) < 4:
                 #mascara.append(0)
         
