@@ -32,7 +32,7 @@ class calculadoraRED:
         self.texto.grid(row=0, column=1, sticky='w', pady=10, padx=10)
 
     def create_buttons(self):
-        self.btn1 = ttk.Button(self.root, text="Abrir", command=self.mascaraRed, state='disabled')
+        self.btn1 = ttk.Button(self.root, text="convertir", command=self.mascaraRed)
         self.btn1.pack(side='left', padx=10)  # Cambié 'grid' por 'pack'
 
      
