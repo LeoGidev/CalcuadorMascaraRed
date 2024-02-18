@@ -28,7 +28,7 @@ class calculadoraRED:
     def create_labels_and_entries(self):
         
         Label(self.nav_bar, text="Ingrese La máscara en formato Slash", bg="#3b5998", fg="white").pack(side='left', pady=10, padx=10)
-        self.texto = Text(self.nav_bar, height=1, width=10)
+        self.texto = Text(self.nav_bar, height=1, width=20)
         self.texto.pack(side='left', pady=10, padx=10)
 
     
