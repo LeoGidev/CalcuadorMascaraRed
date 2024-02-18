@@ -26,11 +26,7 @@ class calculadoraRED:
         #self.create_result_frame()
 
     def create_labels_and_entries(self):
-        # Crear etiqueta y entrada dentro de la barra de navegación
-        #Label(self.nav_bar, text="Ingrese La máscara en formato Slash", bg="#3b5998", fg="white").grid(row=0, column=0, pady=10, padx=10)
-        #self.texto = Text(self.nav_bar, height=1, width=10)
-        #self.texto.grid(row=0, column=1, sticky='w', pady=10, padx=10)
-        ####
+        
         Label(self.nav_bar, text="Ingrese La máscara en formato Slash", bg="#3b5998", fg="white").pack(side='left', pady=10, padx=10)
         self.texto = Text(self.nav_bar, height=1, width=10)
         self.texto.pack(side='left', pady=10, padx=10)
