@@ -64,15 +64,15 @@ class calculadoraRED:
             mascara.append(valor_bits_adicionales)
         
             #Completa la máscara de red con ceros
-            #while len(mascara) < 4:
-                #mascara.append(0)
+            while len(mascara) < 4:
+                mascara.append(0)
         
             #respuesta.delete(0, END)
 
             #respuesta.insert(10,".".join(map(str, mascara)))
-            ##return ".".join(map(str, mascara))
-        #else:
-            #mascara = "el máximo valor de máscara es 32 y el minimo es 0"
+            return ".".join(map(str, mascara))
+        else:
+            mascara = "el máximo valor de máscara es 32 y el minimo es 0"
             #respuesta.delete(0, END)
             #respuesta.insert(10,mascara)
     
