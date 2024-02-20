@@ -26,12 +26,12 @@ class calculadoraRED:
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
         self.nav_bar.grid(row=0, column=0, sticky='ew', pady=10, padx=10, columnspan=3)
         #frame lateral izquierda
-        #self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
-        #self.lateral.pack(fill='y', side='left')
+        self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
+        self.lateral.grid(row=1, column=0, sticky='ns', padx=10, pady=10, rowspan=4)
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
         self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
-        self.mascfr.grid(row=1, column=2)
+        self.mascfr.grid(row=1, column=1, pady=10, padx=10)
 
         
         
