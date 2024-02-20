@@ -18,8 +18,8 @@ class calculadoraRED:
         self.nav_bar = ttk.Frame(self.root, height=50)
         self.nav_bar.pack(fill='x')
         #frame calculadora máscara
-        self.mascfr = ttk.Frame(self.root, width=350)
-        self.mascfr.pack(fill='y',side='left')
+        self.mascfr = ttk.Frame(self.root, height=100, width=350)
+        self.mascfr.pack(side='left', anchor='n')
         
         self.create_widgets()
 
