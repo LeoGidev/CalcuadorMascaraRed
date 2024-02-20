@@ -14,9 +14,12 @@ class calculadoraRED:
         self.root.rowconfigure(3, weight=1)
         #Configuración del icono
         self.root.iconbitmap(os.path.abspath("icon.ico"))
-        #framemascara
+        #frame nav
         self.nav_bar = ttk.Frame(self.root, height=50)
         self.nav_bar.pack(fill='x')
+        #frame calculadora máscara
+        self.mascfr = ttk.Frame(self.root, width=50)
+        self.mascfr.pack(fill='y',side='left')
         
         self.create_widgets()
 
