@@ -29,9 +29,10 @@ class calculadoraRED:
         self.lateral.pack(fill='y', side='left')
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, height=250, width=250, style='modulo.TFrame')
+        self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
         self.mascfr.pack(side='right', anchor='n')
-        titulomasc = ttk.Label(self.mascfr, text="Determinar máscara", style='Titulo.TLabel')
-        titulomasc.pack(pady=10, anchor='w')
+
+        
         
         self.create_widgets()
 
@@ -42,9 +43,10 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.mascfr, text="Ingrese La máscara en formato Slash", background='#949494', foreground='white').pack(side='left', pady=10, padx=10)
-        self.texto = Text(self.mascfr, height=1, width=20)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").pack(side='left', pady=10, padx=10)
+        self.texto = Text(self.mascfr, height=1, width=10)
         self.texto.pack(side='left', pady=10, padx=10)
+        self.resoltado
 
     
     
