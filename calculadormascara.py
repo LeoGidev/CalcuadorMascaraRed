@@ -24,14 +24,14 @@ class calculadoraRED:
         self.root.iconbitmap(os.path.abspath("icon.ico"))
         #frame nav        
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
-        self.nav_bar.pack(fill='x')
+        self.nav_bar.grid(row=0, column=0, sticky='ew', pady=10, padx=10, columnspan=3)
         #frame lateral izquierda
-        self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
-        self.lateral.pack(fill='y', side='left')
+        #self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
+        #self.lateral.pack(fill='y', side='left')
         #frame de mascara
-        self.mascfr = ttk.Frame(self.root, height=250, width=250, style='modulo.TFrame')
+        self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
         self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
-        self.mascfr.pack(side='right', anchor='n')
+        self.mascfr.grid(row=1, column=2)
 
         
         
@@ -44,21 +44,20 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").pack(side='left', pady=10, padx=10)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").grid(row=1,column=2)
         self.texto = Text(self.mascfr, height=1, width=10)
-        self.texto.pack(side='left', pady=10, padx=10)
-        Label(self.mascfr, text='Resultado:').pack(side='left', pady=10, padx=10)
+        self.texto.grid(row=1,column=2)
+        Label(self.mascfr, text='Resultado:').grid(row=1,column=2)
         self.resulmasc = Text(self.mascfr, height=1, width=20)
-        self.resulmasc.pack(side="bottom", anchor="center", pady=10)
+        self.resulmasc.grid(row=2,column=2)
 
     
     
     def create_buttons(self):
-        style = ttk.Style()
-        
+        style = ttk.Style()        
         style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)        
         self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
-        self.btn1.pack(side='left', padx=10)
+        self.btn1.grid(row=1,column=2)
      
 
 
