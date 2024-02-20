@@ -47,8 +47,9 @@ class calculadoraRED:
         Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").pack(side='left', pady=10, padx=10)
         self.texto = Text(self.mascfr, height=1, width=10)
         self.texto.pack(side='left', pady=10, padx=10)
+        Label(self.mascfr, text='Resultado:').pack(side='left', pady=10, padx=10)
         self.resulmasc = Text(self.mascfr, height=1, width=20)
-        self.resulmasc.pack(side="bottom", anchor="center")
+        self.resulmasc.pack(side="bottom", anchor="center", pady=10)
 
     
     
