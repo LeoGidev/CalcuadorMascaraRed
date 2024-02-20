@@ -1,6 +1,8 @@
 from tkinter import Tk, Label, Text, Button, filedialog, Frame, ttk
 import os
 from ttkthemes import ThemedTk
+import tkinter as tk
+from tkinter import ttk
 
 class calculadoraRED:
     def __init__(self, root):
@@ -8,14 +10,18 @@ class calculadoraRED:
         self.root.title('Compi App')
         self.root.geometry("900x600")
         #self.root.config(background="white")
-        self.root.set_theme('equilux')  
+        #self.root.set_theme('equilux')  
+        style = ttk.Style()
+        style.configure('barratop.TFrame', background='#414141')
+        style.configure('laterales.TFrame', background='white')
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
         self.root.rowconfigure(3, weight=1)
         #Configuración del icono
         self.root.iconbitmap(os.path.abspath("icon.ico"))
         #frame nav
-        self.nav_bar = ttk.Frame(self.root, height=50, background='414141')
+        #self.nav_bar = ttk.Frame(self.root, height=50, background='414141')
+        self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
         self.nav_bar.pack(fill='x')
         #frame lateral iz
         self.lateral = ttk.Frame(self.root, width=250)
@@ -96,7 +102,7 @@ class calculadoraRED:
 
 
 if __name__ == "__main__":
-    root = ThemedTk(theme="equilux")
+    root = tk.Tk()
     app = calculadoraRED(root)
     root.mainloop()
 
