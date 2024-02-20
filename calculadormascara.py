@@ -14,7 +14,7 @@ class calculadoraRED:
         style = ttk.Style()
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#949494')
-        #style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
+        style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
 
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
@@ -54,9 +54,7 @@ class calculadoraRED:
     def create_buttons(self):
         style = ttk.Style()
         style.theme_use("clam")
-        style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)
-        
-        #style.configure("TButton", background='black', foreground='black', troughcolor='blue', focuscolor="red", highlightbackground='green', borderwidth=0)
+        style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)        
         self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
         self.btn1.pack(side='left', padx=10)
      
