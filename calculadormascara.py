@@ -17,9 +17,12 @@ class calculadoraRED:
         #frame nav
         self.nav_bar = ttk.Frame(self.root, height=50)
         self.nav_bar.pack(fill='x')
-        #frame calculadora máscara
-        self.mascfr = ttk.Frame(self.root, height=100, width=350)
-        self.mascfr.pack(side='left', anchor='n')
+        #frame lateral iz
+        self.lateral = ttk.Frame(self.root, width=250)
+        self.lateral.pack(fill='y', side='left')
+        #frame de mascara
+        self.mascfr = ttk.Frame(self.root,  width=250, height=200)
+        self.mascfr.pack(side='right', anchor='n')
         
         self.create_widgets()
 
@@ -30,15 +33,15 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.nav_bar, text="Ingrese La máscara en formato Slash", bg="#3b5998", fg="white").pack(side='left', pady=10, padx=10)
-        self.texto = Text(self.nav_bar, height=1, width=20)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash", fg="white").pack(side='left', pady=10, padx=10)
+        self.texto = Text(self.mascfr, height=1, width=20)
         self.texto.pack(side='left', pady=10, padx=10)
 
     
     
     def create_buttons(self):
             # Colocar el botón dentro del nav_bar
-            self.btn1 = ttk.Button(self.nav_bar, text="convertir", command=self.mascaraRed)
+            self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed)
             self.btn1.pack(side='left', padx=10)  # Ajusta según tus preferencias
      
 
