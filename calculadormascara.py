@@ -14,7 +14,7 @@ class calculadoraRED:
         style = ttk.Style()
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#949494')
-        style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
+        #style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
 
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
@@ -46,14 +46,19 @@ class calculadoraRED:
         Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").pack(side='left', pady=10, padx=10)
         self.texto = Text(self.mascfr, height=1, width=10)
         self.texto.pack(side='left', pady=10, padx=10)
-        self.resoltado
+        self.resulmasc = Text(self.mascfr, height=1, width=20)
+        self.resulmasc.pack(side="bottom", anchor="center")
 
     
     
     def create_buttons(self):
-            # Colocar el botón dentro del nav_bar
-            self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed)
-            self.btn1.pack(side='left', padx=10)  # Ajusta según tus preferencias
+        style = ttk.Style()
+        style.theme_use("clam")
+        style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)
+        
+        #style.configure("TButton", background='black', foreground='black', troughcolor='blue', focuscolor="red", highlightbackground='green', borderwidth=0)
+        self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
+        self.btn1.pack(side='left', padx=10)
      
 
 
