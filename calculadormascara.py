@@ -12,6 +12,7 @@ class calculadoraRED:
         
         #estilos de los frames
         style = ttk.Style()
+        style.theme_use("clam")
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#949494')
         style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
@@ -53,7 +54,7 @@ class calculadoraRED:
     
     def create_buttons(self):
         style = ttk.Style()
-        style.theme_use("clam")
+        
         style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)        
         self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
         self.btn1.pack(side='left', padx=10)
