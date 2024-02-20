@@ -15,7 +15,7 @@ class calculadoraRED:
         #Configuración del icono
         self.root.iconbitmap(os.path.abspath("icon.ico"))
         #frame nav
-        self.nav_bar = ttk.Frame(self.root, height=50)
+        self.nav_bar = ttk.Frame(self.root, height=50, background='414141')
         self.nav_bar.pack(fill='x')
         #frame lateral iz
         self.lateral = ttk.Frame(self.root, width=250)
