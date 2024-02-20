@@ -9,18 +9,19 @@ class calculadoraRED:
         self.root = root
         self.root.title('Compi App')
         self.root.geometry("900x600")
-        #self.root.config(background="white")
-        #self.root.set_theme('equilux')  
+        
+        #estilos de los frames
         style = ttk.Style()
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#949494')
+        style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
+
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
         self.root.rowconfigure(3, weight=1)
         #Configuración del icono
         self.root.iconbitmap(os.path.abspath("icon.ico"))
-        #frame nav
-        #self.nav_bar = ttk.Frame(self.root, height=50, background='414141')
+        #frame nav        
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
         self.nav_bar.pack(fill='x')
         #frame lateral izquierda
@@ -29,6 +30,8 @@ class calculadoraRED:
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, height=250, width=250, style='modulo.TFrame')
         self.mascfr.pack(side='right', anchor='n')
+        titulomasc = ttk.Label(self.mascfr, text="Determinar máscara", style='Titulo.TLabel')
+        titulomasc.pack(pady=10, anchor='w')
         
         self.create_widgets()
 
