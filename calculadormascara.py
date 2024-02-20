@@ -13,7 +13,7 @@ class calculadoraRED:
         #self.root.set_theme('equilux')  
         style = ttk.Style()
         style.configure('barratop.TFrame', background='#414141')
-        style.configure('laterales.TFrame', background='white')
+        style.configure('modulo.TFrame', background='#949494')
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=1)
         self.root.rowconfigure(3, weight=1)
@@ -23,11 +23,11 @@ class calculadoraRED:
         #self.nav_bar = ttk.Frame(self.root, height=50, background='414141')
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
         self.nav_bar.pack(fill='x')
-        #frame lateral iz
-        self.lateral = ttk.Frame(self.root, width=250)
+        #frame lateral izquierda
+        self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
         self.lateral.pack(fill='y', side='left')
         #frame de mascara
-        self.mascfr = ttk.Frame(self.root,  width=250, height=200)
+        self.mascfr = ttk.Frame(self.root, height=250, width=250, style='modulo.TFrame')
         self.mascfr.pack(side='right', anchor='n')
         
         self.create_widgets()
@@ -39,7 +39,7 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.mascfr, text="Ingrese La máscara en formato Slash", bg="#414141", fg="white").pack(side='left', pady=10, padx=10)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash", background='#949494', foreground='white').pack(side='left', pady=10, padx=10)
         self.texto = Text(self.mascfr, height=1, width=20)
         self.texto.pack(side='left', pady=10, padx=10)
 
