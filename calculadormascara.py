@@ -33,7 +33,7 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.mascfr, text="Ingrese La máscara en formato Slash", fg="white").pack(side='left', pady=10, padx=10)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash", bg="#3b5998", fg="white").pack(side='left', pady=10, padx=10)
         self.texto = Text(self.mascfr, height=1, width=20)
         self.texto.pack(side='left', pady=10, padx=10)
 
