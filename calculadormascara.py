@@ -27,7 +27,7 @@ class calculadoraRED:
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
         self.nav_bar.grid(row=0, column=0, sticky='ew', pady=0, padx=10, columnspan=3)
         #frame lateral izquierda
-        self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
+        self.lateral = ttk.Frame(self.root, width=300, style='barratop.TFrame')
         self.lateral.grid(row=1, column=0, sticky='ns', padx=10, pady=0, rowspan=4)
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
@@ -45,10 +45,10 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").grid(row=1,column=2, pady=10)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:",background="#414141", foreground="white").grid(row=1,column=2, pady=10)
         self.texto = Text(self.mascfr, height=1, width=10)
         self.texto.grid(row=2,column=2, pady=10)
-        Label(self.mascfr, text='Resultado:').grid(row=3,column=2, pady=10)
+        Label(self.mascfr, text='Resultado:', background="#414141", foreground="white").grid(row=3,column=2, pady=10)
         self.resulmasc = Text(self.mascfr, height=1, width=20)
         self.resulmasc.grid(row=4,column=2, pady=10)
 
