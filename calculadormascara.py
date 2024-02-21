@@ -81,6 +81,13 @@ class calculadoraRED:
         self.valt=Label(self.lateral, text='45 AH', background='#414141', foreground='white')
         self.valt.grid(row=5, column=1, sticky='w')
 
+        Label(self.lateral, text='Resultados:', background='#414141', foreground='white').grid(row=7, column=0, sticky='w', padx=0, pady=10)
+        
+        self.potencia=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
+        self.potencia.grid(row=8, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
+
+
+
 
 
     
@@ -94,6 +101,10 @@ class calculadoraRED:
         #Button del convertidor de IButtons
         self.btn2 = ttk.Button(self.ibut, text='Convertir',command=self.convertibut, style='Fancy.TButton')
         self.btn2.grid(row=4, column=1, padx=10, pady=10)
+        #Button de potencia
+        self.btn2 = ttk.Button(self.ibut, text='Calcular',command=self.convertibut, style='Fancy.TButton')
+        self.btn2.grid(row=4, column=1, padx=10, pady=10)
+
      
 
 
