@@ -86,10 +86,10 @@ class calculadoraRED:
         self.potencia=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
         self.potencia.grid(row=8, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
-        self.autonmiaideal=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
+        self.autonmiaideal=Label(self.lateral, text='Autonomía Ideal', background='#414141', foreground='white')
         self.autonmiaideal.grid(row=9, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
-        self.autonomíaporcentual=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
+        self.autonomíaporcentual=Label(self.lateral, text='Autonomía Porcentual', background='#414141', foreground='white')
         self.autonomíaporcentual.grid(row=10, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
 
@@ -120,8 +120,14 @@ class calculadoraRED:
         P = round(I * V * 0.8, 2)#se redondea al segundo decimal round(numero, 2)
         print('Potencia:', P)
         self.potencia.config(text=f'Potencia: {P} W')
-        AU = self.banco.get()
-        print(AU)
+        Cap = self.banco.get()
+        
+        Cap = float(Cap)
+        Cap = round(Cap)
+        Autonomia= round(Cap/I, 2)
+        AutReal = round(Autonomia * 0.8, 2)
+        self.autonmiaideal.config(text=f'Autonmía ideal = {Autonomia} h')
+        self.autonomíaporcentual.config(text=f'Autonomía porcentual(80%) = {AutReal} h')
 
 
     def Tomavalor(self, valor):
