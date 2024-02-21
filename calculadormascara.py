@@ -59,15 +59,21 @@ class calculadoraRED:
         Label(self.ibut,text='Ingrese el valor de RFID', background='#414141', foreground='white').grid(row=0, column=1, padx=10, pady=10)
         self.texto2 = Text(self.ibut, height=1, width=20)
         self.texto2.grid(row=1, column=1, padx=10, pady=10)
+        Label(self.ibut, text='Resultado:', background='#414141', foreground='white').grid(row=2, column=1, padx=10, pady=10)
+        self.resulibut = Text(self.ibut, height=1, width=20)
+        self.resulibut.grid(row=3, column=1, padx=10, pady=10)
+
     
     
     def create_buttons(self):
         style = ttk.Style()        
         style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0) 
         #Button del convertidor de máscara       
-        self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
+        self.btn1 = ttk.Button(self.mascfr, text="Convertir", command=self.mascaraRed, style='Fancy.TButton')
         self.btn1.grid(row=5,column=2, pady=10)
         #Button del convertidor de IButtons
+        self.btn2 = ttk.Button(self.ibut, text='Convertir',command=self.convertibut, style='Fancy.TButton')
+        self.btn2.grid(row=4, column=1, padx=10, pady=10)
      
 
 
@@ -113,7 +119,9 @@ class calculadoraRED:
             self.mascara = "El valor de la máscara debe estar entre 0 y 32"
             self.resulmasc.delete("1.0", "end")
             self.resulmasc.insert("1.0", self.mascara)
-
+    
+    def convertibut(self):
+        print('hola')
     
 
     
