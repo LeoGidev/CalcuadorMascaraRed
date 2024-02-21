@@ -7,7 +7,7 @@ from tkinter import ttk
 class calculadoraRED:
     def __init__(self, root):
         self.root = root
-        self.root.title('Compi App')
+        self.root.title('Tecnic Assitant')
         self.root.geometry("900x600")
         
         #estilos de los frames
