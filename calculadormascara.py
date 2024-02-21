@@ -108,8 +108,8 @@ class calculadoraRED:
         self.btn2 = ttk.Button(self.ibut, text='Convertir',command=self.convertibut, style='Fancy.TButton')
         self.btn2.grid(row=4, column=1, padx=10, pady=10)
         #Button de potencia
-        self.btn3 = ttk.Button(self.ibut, text='Calcular',command=self.CalcPotencia, style='Fancy.TButton')
-        self.btn3.grid(row=6, column=1, padx=10, pady=10)
+        self.btn3 = ttk.Button(self.lateral, text='Calcular',command=self.CalcPotencia, style='Fancy.TButton')
+        self.btn3.grid(row=6, column=0, sticky='e', padx=10, pady=10)
 
      
 
