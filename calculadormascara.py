@@ -24,10 +24,10 @@ class calculadoraRED:
         self.root.iconbitmap(os.path.abspath("icon.ico"))
         #frame nav        
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
-        self.nav_bar.grid(row=0, column=0, sticky='ew', pady=10, padx=10, columnspan=3)
+        self.nav_bar.grid(row=0, column=0, sticky='ew', pady=0, padx=10, columnspan=3)
         #frame lateral izquierda
         self.lateral = ttk.Frame(self.root, width=250, style='barratop.TFrame')
-        self.lateral.grid(row=1, column=0, sticky='ns', padx=10, pady=10, rowspan=4)
+        self.lateral.grid(row=1, column=0, sticky='ns', padx=10, pady=0, rowspan=4)
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
         self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
@@ -44,12 +44,12 @@ class calculadoraRED:
 
     def create_labels_and_entries(self):
         
-        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").grid(row=1,column=2)
+        Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:").grid(row=1,column=2, pady=10)
         self.texto = Text(self.mascfr, height=1, width=10)
-        self.texto.grid(row=1,column=2)
-        Label(self.mascfr, text='Resultado:').grid(row=1,column=2)
+        self.texto.grid(row=2,column=2, pady=10)
+        Label(self.mascfr, text='Resultado:').grid(row=3,column=2, pady=10)
         self.resulmasc = Text(self.mascfr, height=1, width=20)
-        self.resulmasc.grid(row=2,column=2)
+        self.resulmasc.grid(row=4,column=2, pady=10)
 
     
     
@@ -57,7 +57,7 @@ class calculadoraRED:
         style = ttk.Style()        
         style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)        
         self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
-        self.btn1.grid(row=1,column=2)
+        self.btn1.grid(row=5,column=2, pady=10)
      
 
 
