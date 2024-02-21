@@ -28,14 +28,15 @@ class calculadoraRED:
         self.nav_bar.grid(row=0, column=0, sticky='ew', pady=0, padx=0, columnspan=3)
         #frame lateral izquierda
         self.lateral = ttk.Frame(self.root, width=300, style='barratop.TFrame')
+        self.lateral = ttk.LabelFrame(self.root, text='Calculos de potencia:', padding=(10,10))
         self.lateral.grid(row=1, column=0, sticky='ns', padx=0, pady=0, rowspan=4)
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
-        self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
+        self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara:", padding=(20, 20))
         self.mascfr.grid(row=1, column=1, pady=1, padx=1)
         #Frame de Ibuttons
         self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
-        self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS', padding=(59, 20))
+        self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS:', padding=(59, 20))
         self.ibut.grid(row=2, column=1, padx=1, pady=1)
 
         
@@ -62,6 +63,16 @@ class calculadoraRED:
         Label(self.ibut, text='Resultado:', background='#414141', foreground='white').grid(row=2, column=1, padx=10, pady=10)
         self.resulibut = Text(self.ibut, height=1, width=20)
         self.resulibut.grid(row=3, column=1, padx=10, pady=10)
+        #Labels del módulo de potencia
+        Label(self.lateral, text='Indque corriente consumida en baterías', background='#414141', foreground='white').grid(row=0, column=0, padx=10, pady=10)
+        self.text2 = Text(self.lateral, height=1, width=10)
+        self.text2.grid(row=1,column=0, padx=10, pady=10)
+        Label(self.lateral, text='A', background='#414141', foreground='white').grid(row=1, column=1, padx=10, pady=10)
+        Label(self.lateral, text='Ingrese la tensión del banco de baterías', background='#414141', foreground='white').grid(row=2, column=0, padx=10, pady=10)
+        self.text3 = Text(self.lateral, height=1, width=10)
+        self.text3.grid(row=3, column=0, padx=10, pady=10)
+
+
 
     
     
