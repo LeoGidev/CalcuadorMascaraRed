@@ -78,7 +78,7 @@ class calculadoraRED:
         
         self.banco = ttk.Scale(self.lateral, from_=45, to=200, orient="horizontal", command=self.Tomavalor, style="TScale.Horizontal.TScale")
         self.banco.grid(row=5, column=0, sticky='e', padx=4, pady=10)
-        self.valt=Label(self.lateral, text='', background='#414141', foreground='white')
+        self.valt=Label(self.lateral, text='45 AH', background='#414141', foreground='white')
         self.valt.grid(row=5, column=1, sticky='w')
 
 
@@ -104,7 +104,7 @@ class calculadoraRED:
         valor=float(valor)
         valor=round(valor)
         #self.root.nametowidget(self.root.grid_slaves(row=2, column=0)[0]).config(state='normal')
-        self.valt.config(text=f'Valor: {valor}')
+        self.valt.config(text=f'{valor} AH')
 
     def mascaraRed(self):
         x = self.texto.get("1.0", "end-1c")
