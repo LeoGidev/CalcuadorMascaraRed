@@ -67,12 +67,19 @@ class calculadoraRED:
     def mascaraRed(self):
         x = self.texto.get("1.0", "end-1c")
         x = x.strip("\n")
-        x=int(x)
+
+        try:
+            x = int(x)
+        except ValueError:
+            self.mascara = "Ingrese un valor numérico válido"
+            self.resulmasc.delete("1.0", "end")
+            self.resulmasc.insert("1.0", self.mascara)
+            return
+
         print(x)
-        
-        if x < 33  and x > -1:
-            
-            print('holq')
+
+        if 0 <= x < 33:
+            print('x:', x)
 
             # Calcula los octetos completos y los bits adicionales
             octetos_completos = x // 8
@@ -84,20 +91,20 @@ class calculadoraRED:
             if bits_adicionales > 0:
                 valor_bits_adicionales = 2 ** (8 - bits_adicionales) - 1
                 self.mascara.append(valor_bits_adicionales)
-        
-            #Completa la máscara de red con ceros
+
+            # Completa la máscara de red con ceros
             while len(self.mascara) < 4:
                 self.mascara.append(0)
-        
-            #respuesta.delete(0, END)
 
-            self.resulmasc.insert(10,".".join(map(str, self.mascara)))
-        
+            self.resulmasc.delete("1.0", "end")
+            self.resulmasc.insert("1.0", ".".join(map(str, self.mascara)))
+
             return ".".join(map(str, self.mascara))
         else:
-            self.mascara = "el máximo valor de máscara es 32 y el minimo es 0"
-            self.resulmasc.delete(0, 'END')
-            self.resulmasc.insert(10,self.mascara)
+            self.mascara = "El valor de la máscara debe estar entre 0 y 32"
+            self.resulmasc.delete("1.0", "end")
+            self.resulmasc.insert("1.0", self.mascara)
+
     
 
     
