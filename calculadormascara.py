@@ -81,9 +81,9 @@ class calculadoraRED:
             # Construye la máscara de red
             mascara = [255] * octetos_completos
 
-            #if bits_adicionales > 0:
-            valor_bits_adicionales = 2 ** (8 - bits_adicionales) - 1
-            mascara.append(valor_bits_adicionales)
+            if bits_adicionales > 0:
+                valor_bits_adicionales = 2 ** (8 - bits_adicionales) - 1
+                mascara.append(valor_bits_adicionales)
         
             #Completa la máscara de red con ceros
             while len(mascara) < 4:
