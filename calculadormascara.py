@@ -35,7 +35,7 @@ class calculadoraRED:
         self.mascfr.grid(row=1, column=1, pady=10, padx=10)
         #Frame de Ibuttons
         self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
-        self.ibut = ttk.LabelFrame(self.root, text='Covertir IBUTTONS', padding=(20, 20))
+        self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS', padding=(20, 20))
         self.ibut.grid(row=2, column=1, padx=10, pady=10)
 
         
@@ -56,6 +56,9 @@ class calculadoraRED:
         self.resulmasc = Text(self.mascfr, height=1, width=20)
         self.resulmasc.grid(row=4,column=2, pady=10)
         #Labels del convertidor de IButtons
+        Label(self.ibut,text='Ingrese el valor de RFID', background='#414141', foreground='white').grid(row=0, column=1, padx=10, pady=10)
+        self.texto2 = Text(self.ibut, height=1, width=20)
+        self.texto2.grid(row=1, column=1, padx=10, pady=10)
     
     
     def create_buttons(self):
