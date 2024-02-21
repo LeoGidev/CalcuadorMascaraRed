@@ -15,8 +15,8 @@ class calculadoraRED:
         #style.theme_use("clam")
         self.root.set_theme('equilux')  
         style.configure('barratop.TFrame', background='#414141')
-        style.configure('modulo.TFrame', background='#949494')
-        style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
+        style.configure('modulo.TFrame', background='#414141')
+        #style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
 
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)
@@ -33,11 +33,11 @@ class calculadoraRED:
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
         self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara:", padding=(20, 20))
-        self.mascfr.grid(row=1, column=1, pady=1, padx=1)
+        self.mascfr.grid(row=1, column=1, pady=0, padx=0)
         #Frame de Ibuttons
         self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
         self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS:', padding=(59, 20))
-        self.ibut.grid(row=2, column=1, padx=1, pady=1)
+        self.ibut.grid(row=2, column=1, padx=0, pady=0)
 
         
         
