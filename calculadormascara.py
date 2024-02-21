@@ -3,6 +3,7 @@ import os
 from ttkthemes import ThemedTk
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image, ImageTk
 
 class calculadoraRED:
     def __init__(self, root):
