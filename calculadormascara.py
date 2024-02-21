@@ -120,6 +120,8 @@ class calculadoraRED:
         P = round(I * V * 0.8, 2)#se redondea al segundo decimal round(numero, 2)
         print('Potencia:', P)
         self.potencia.config(text=f'Potencia: {P} W')
+        AU = self.banco.get()
+        print(AU)
 
 
     def Tomavalor(self, valor):
