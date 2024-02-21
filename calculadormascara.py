@@ -117,9 +117,9 @@ class calculadoraRED:
         print('potencia')
         I =int( self.text2.get("1.0", "end-1c"))
         V = int(self.text3.get("1.0", "end-1c"))
-        P = I * V * 0.8
+        P = round(I * V * 0.8, 2)#se redondea al segundo decimal round(numero, 2)
         print('Potencia:', P)
-        self.potencia.config(text=f'Potencia:{P}W')
+        self.potencia.config(text=f'Potencia: {P} W')
 
 
     def Tomavalor(self, valor):
