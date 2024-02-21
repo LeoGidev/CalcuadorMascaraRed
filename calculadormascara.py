@@ -103,7 +103,6 @@ class calculadoraRED:
         print(valor)
         valor=float(valor)
         valor=round(valor)
-        #self.root.nametowidget(self.root.grid_slaves(row=2, column=0)[0]).config(state='normal')
         self.valt.config(text=f'{valor} AH')
 
     def mascaraRed(self):
