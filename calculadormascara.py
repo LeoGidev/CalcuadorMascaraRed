@@ -40,7 +40,14 @@ class calculadoraRED:
         self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
         self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS:', padding=(59, 20))
         self.ibut.grid(row=2, column=1, padx=0, pady=10)
+        #gif
+         # Crea un label para mostrar el gif en la columna 3
+        self.gif = ttk.Frame(self.root)
+        self.gif.grid(row=1, column=2, rowspan=4, sticky='ns', padx=10)
 
+
+        # Carga y muestra el gif
+        #self.load_and_display_gif()
         
         
         self.create_widgets()
@@ -94,6 +101,8 @@ class calculadoraRED:
         self.autonomíaporcentual=Label(self.lateral, text='Autonomía Porcentual', background='#414141', foreground='white')
         self.autonomíaporcentual.grid(row=10, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
+        self.gifL = Label(self.gif, text='GIF Animado:')
+        self.gifL.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
 
 
 
@@ -112,8 +121,11 @@ class calculadoraRED:
         #Button de potencia
         self.btn3 = ttk.Button(self.lateral, text='Calcular',command=self.CalcPotencia, style='Fancy.TButton')
         self.btn3.grid(row=6, column=0, sticky='e', padx=10, pady=10)
+         #Button de gif
+        self.btn4 = ttk.Button(self.gif, text='gif',command=self.load_and_display_gif, style='Fancy.TButton')
+        self.btn4.grid(row=2, column=0, sticky='e', padx=10, pady=10)
 
-     
+    
 
     def CalcPotencia(self):
         print('potencia')
@@ -199,6 +211,19 @@ class calculadoraRED:
         self.resulibut.delete("1.0", "end")
         self.resulibut.insert("1.0", salida)
     
+    def load_and_display_gif(self):
+        # Ruta al archivo GIF
+        gif_path = "tenkiu.gif"
+
+        # Lee el gif y conviértelo a un formato compatible con Tkinter
+        gif_image = Image.open(gif_path)
+        gif_image = gif_image.resize((150, 150))  # Ajusta el tamaño según tus necesidades
+        gif_image = ImageTk.PhotoImage(gif_image)
+
+        # Configura la imagen en el label
+        self.gifL.configure(image=gif_image)
+        self.gifL.image = gif_image
+
 
     
 
