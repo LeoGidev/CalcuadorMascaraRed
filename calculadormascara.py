@@ -122,6 +122,23 @@ class calculadoraRED:
     
     def convertibut(self):
         print('hola')
+        result=self.texto2.get(1.0, tk.END+"-1c")
+        self.letra = []
+        self.par=[]
+        i=0
+        for x in result:
+            self.letra.append(x)
+            y = str(self.letra[i-1]) + str(self.letra[i])
+            if i%2 != 0:
+                self.par.append(y)
+            i=i+1
+        inver = self.par[::-1]
+        
+        salida = ''.join(inver)
+        
+        self.resulibut.delete("1.0", "end")
+
+        self.resulibut.insert(10,salida)
     
 
     
