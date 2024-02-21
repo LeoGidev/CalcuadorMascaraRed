@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Text, Button, filedialog, Frame, ttk
+from tkinter import Tk, Label, Text, Button, filedialog, Frame, ttk, Scale
 import os
 from ttkthemes import ThemedTk
 import tkinter as tk
@@ -72,6 +72,11 @@ class calculadoraRED:
         self.text3 = Text(self.lateral, height=1, width=10)
         self.text3.grid(row=3, column=0, sticky='e', padx=4, pady=10)
         Label(self.lateral, text='V', background='#414141', foreground='white').grid(row=3, column=1, sticky='w', padx=0, pady=10)
+        Label(self.lateral, text='Capacidad del Banco:', background='#414141', foreground='white').grid(row=4, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
+        style = ttk.Style()
+        style.configure("TScale.Horizontal.TScale", background="#414141", troughcolor="lightblue", sliderbackground="darkblue")
+        self.banco = ttk.Scale(self.lateral, from_=45, to=200, orient="horizontal", style="TScale.Horizontal.TScale")
+        self.banco.grid(row=5, column=0, sticky='e', padx=4, pady=10)
 
 
 
