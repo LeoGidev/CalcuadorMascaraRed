@@ -115,6 +115,12 @@ class calculadoraRED:
 
     def CalcPotencia(self):
         print('potencia')
+        I =int( self.text2.get("1.0", "end-1c"))
+        V = int(self.text3.get("1.0", "end-1c"))
+        P = I * V * 0.8
+        print('Potencia:', P)
+        self.potencia.config(text=f'Potencia:{P}W')
+
 
     def Tomavalor(self, valor):
         
