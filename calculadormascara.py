@@ -137,8 +137,7 @@ class calculadoraRED:
         salida = ''.join(inver)
         
         self.resulibut.delete("1.0", "end")
-
-        self.resulibut.insert(10,salida)
+        self.resulibut.insert("1.0", salida)
     
 
     
