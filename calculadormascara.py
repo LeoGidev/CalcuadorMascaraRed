@@ -74,14 +74,16 @@ class calculadoraRED:
         Label(self.lateral, text='V', background='#414141', foreground='white').grid(row=3, column=1, sticky='w', padx=0, pady=10)
         Label(self.lateral, text='Capacidad del Banco:', background='#414141', foreground='white').grid(row=4, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
         style = ttk.Style()
-        style.configure("TScale.Horizontal.TScale", background="#414141", troughcolor="lightblue", sliderbackground="darkblue")
-        self.banco = ttk.Scale(self.lateral, from_=45, to=200, orient="horizontal", style="TScale.Horizontal.TScale")
+        style.configure("TScale.Horizontal.TScale", background="white")
+        
+        self.banco = ttk.Scale(self.lateral, from_=45, to=200, orient="horizontal", command=self.valor, style="TScale.Horizontal.TScale")
         self.banco.grid(row=5, column=0, sticky='e', padx=4, pady=10)
+        self.val=Label(self.lateral, text='', background='#414141', foreground='white').grid(row=5, column=1, sticky='w')
 
 
 
     
-    
+
     def create_buttons(self):
         style = ttk.Style()        
         style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0) 
@@ -95,6 +97,11 @@ class calculadoraRED:
 
 
 
+    def valor(self, valor):
+        
+        print(valor)
+        self.val.delete("1.0", "end")
+        self.val.insert("1.0", ".".join(map(str, self.valor)))
 
     def mascaraRed(self):
         x = self.texto.get("1.0", "end-1c")
