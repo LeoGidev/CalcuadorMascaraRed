@@ -1,9 +1,11 @@
-from tkinter import Tk, Label, Text, Button, filedialog, Frame, ttk, Scale
+from tkinter import Tk, Label, Text, Button, filedialog, Frame, ttk, Scale, Canvas
 import os
 from ttkthemes import ThemedTk
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
+import imageio
+
 
 class calculadoraRED:
     def __init__(self, root):
@@ -101,8 +103,8 @@ class calculadoraRED:
         self.autonomíaporcentual=Label(self.lateral, text='Autonomía Porcentual', background='#414141', foreground='white')
         self.autonomíaporcentual.grid(row=10, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
-        self.gifL = Label(self.gif, text='GIF Animado:')
-        self.gifL.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
+        self.gif_canvas = Canvas(self.gif, bg='#414141', width=250, height=250)
+        self.gif_canvas.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
 
 
 
@@ -215,14 +217,27 @@ class calculadoraRED:
         # Ruta al archivo GIF
         gif_path = "tenkiu.gif"
 
-        # Lee el gif y conviértelo a un formato compatible con Tkinter
-        gif_image = Image.open(gif_path)
-        gif_image = gif_image.resize((150, 150))  # Ajusta el tamaño según tus necesidades
-        gif_image = ImageTk.PhotoImage(gif_image)
+        # Carga el GIF como una secuencia de imágenes
+        gif_frames = imageio.get_reader(gif_path)
 
-        # Configura la imagen en el label
-        self.gifL.configure(image=gif_image)
-        self.gifL.image = gif_image
+        # Recorre todas las imágenes y las muestra en el Canvas
+        for i, frame in enumerate(gif_frames):
+            # Convierte el array de píxeles a una imagen de PIL
+            image = Image.fromarray(frame)
+            image = image.resize((150, 150))  # Ajusta el tamaño según tus necesidades
+
+            # Convierte la imagen a un formato compatible con Tkinter
+            tk_image = ImageTk.PhotoImage(image)
+
+            # Configura la imagen en el Canvas
+            self.gif_canvas.create_image(0, 0, anchor=tk.NW, image=tk_image)
+            self.gif_canvas.image = tk_image
+
+            # Actualiza la interfaz gráfica para mostrar el siguiente frame
+            self.root.update_idletasks()
+
+            # Espera un breve periodo para lograr la animación
+            self.root.after(100)  # Ajusta el tiempo de espera según sea necesario
 
 
     
