@@ -9,6 +9,7 @@ class calculadoraRED:
         self.root = root
         self.root.title('Tecnic Assitant')
         self.root.geometry("900x600")
+        self.root.configure(bg='#414141')
         
         #estilos de los frames
         style = ttk.Style()
@@ -37,7 +38,7 @@ class calculadoraRED:
         #Frame de Ibuttons
         self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
         self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS:', padding=(59, 20))
-        self.ibut.grid(row=2, column=1, padx=0, pady=0)
+        self.ibut.grid(row=2, column=1, padx=0, pady=10)
 
         
         
