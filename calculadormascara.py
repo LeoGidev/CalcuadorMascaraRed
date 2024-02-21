@@ -71,6 +71,7 @@ class calculadoraRED:
         Label(self.lateral, text='Ingrese la tensión del banco de baterías', background='#414141', foreground='white').grid(row=2, column=0, columnspan=2, sticky='w', padx=10, pady=10)
         self.text3 = Text(self.lateral, height=1, width=10)
         self.text3.grid(row=3, column=0, sticky='e', padx=4, pady=10)
+        Label(self.lateral, text='V', background='#414141', foreground='white').grid(row=3, column=1, sticky='w', padx=0, pady=10)
 
 
 
