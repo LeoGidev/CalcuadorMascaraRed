@@ -64,7 +64,7 @@ class calculadoraRED:
         self.resulibut = Text(self.ibut, height=1, width=20)
         self.resulibut.grid(row=3, column=1, padx=10, pady=10)
         #Labels del módulo de potencia
-        Label(self.lateral, text='Indque corriente consumida en baterías', background='#414141', foreground='white').grid(row=0, column=0, padx=10, pady=10, columnspan=2)
+        Label(self.lateral, text='Indque corriente consumida en baterías', background='#414141', foreground='white').grid(row=0, column=0, ticky='ew', padx=0, pady=10, columnspan=2)
         self.text2 = Text(self.lateral, height=1, width=10)
         self.text2.grid(row=1,column=0, padx=10, pady=10)
         Label(self.lateral, text='A', background='#414141', foreground='white').grid(row=1, column=1, padx=0, pady=10)
