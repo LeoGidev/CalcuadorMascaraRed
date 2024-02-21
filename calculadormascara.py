@@ -19,24 +19,24 @@ class calculadoraRED:
         style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
 
         self.root.columnconfigure(0, weight=0)
-        self.root.columnconfigure(1, weight=1)
+        self.root.columnconfigure(1, weight=0)
         self.root.rowconfigure(3, weight=1)
         #Configuración del icono
         self.root.iconbitmap(os.path.abspath("icon.ico"))
         #frame nav        
         self.nav_bar = ttk.Frame(self.root, height=50, style='barratop.TFrame')
-        self.nav_bar.grid(row=0, column=0, sticky='ew', pady=0, padx=10, columnspan=3)
+        self.nav_bar.grid(row=0, column=0, sticky='ew', pady=0, padx=0, columnspan=3)
         #frame lateral izquierda
         self.lateral = ttk.Frame(self.root, width=300, style='barratop.TFrame')
-        self.lateral.grid(row=1, column=0, sticky='ns', padx=10, pady=0, rowspan=4)
+        self.lateral.grid(row=1, column=0, sticky='ns', padx=0, pady=0, rowspan=4)
         #frame de mascara
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
         self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
-        self.mascfr.grid(row=1, column=1, pady=10, padx=10)
+        self.mascfr.grid(row=1, column=1, pady=1, padx=1)
         #Frame de Ibuttons
         self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
-        self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS', padding=(20, 20))
-        self.ibut.grid(row=2, column=1, padx=10, pady=10)
+        self.ibut = ttk.LabelFrame(self.root, text='Convertir IBUTTONS', padding=(59, 20))
+        self.ibut.grid(row=2, column=1, padx=1, pady=1)
 
         
         
