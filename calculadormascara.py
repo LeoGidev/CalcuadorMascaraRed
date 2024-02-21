@@ -33,6 +33,10 @@ class calculadoraRED:
         self.mascfr = ttk.Frame(self.root, style='modulo.TFrame')
         self.mascfr = ttk.LabelFrame(self.root, text="Determinar máscara", padding=(20, 20))
         self.mascfr.grid(row=1, column=1, pady=10, padx=10)
+        #Frame de Ibuttons
+        self.ibut = ttk.Frame(self.root, style='modulo.TFrame')
+        self.ibut = ttk.LabelFrame(self.root, text='Covertir IBUTTONS', padding=(20, 20))
+        self.ibut.grid(row=2, column=1, padx=10, pady=10)
 
         
         
@@ -44,21 +48,23 @@ class calculadoraRED:
         #self.create_result_frame()
 
     def create_labels_and_entries(self):
-        
+        #labels del convertidor de máscara
         Label(self.mascfr, text="Ingrese La máscara en formato Slash sin la barra:",background="#414141", foreground="white").grid(row=1,column=2, pady=10)
         self.texto = Text(self.mascfr, height=1, width=10)
         self.texto.grid(row=2,column=2, pady=10)
         Label(self.mascfr, text='Resultado:', background="#414141", foreground="white").grid(row=3,column=2, pady=10)
         self.resulmasc = Text(self.mascfr, height=1, width=20)
         self.resulmasc.grid(row=4,column=2, pady=10)
-
+        #Labels del convertidor de IButtons
     
     
     def create_buttons(self):
         style = ttk.Style()        
-        style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0)        
+        style.configure("Fancy.TButton", foreground="white", background="#0099ff", borderwidth=0) 
+        #Button del convertidor de máscara       
         self.btn1 = ttk.Button(self.mascfr, text="convertir", command=self.mascaraRed, style='Fancy.TButton')
         self.btn1.grid(row=5,column=2, pady=10)
+        #Button del convertidor de IButtons
      
 
 
