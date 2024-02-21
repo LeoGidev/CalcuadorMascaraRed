@@ -12,7 +12,8 @@ class calculadoraRED:
         
         #estilos de los frames
         style = ttk.Style()
-        style.theme_use("clam")
+        #style.theme_use("clam")
+        self.root.set_theme('equilux')  
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#949494')
         style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
@@ -111,7 +112,7 @@ class calculadoraRED:
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
+    root = ThemedTk(theme="equilux")
     app = calculadoraRED(root)
     root.mainloop()
 
