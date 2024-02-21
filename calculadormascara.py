@@ -86,6 +86,12 @@ class calculadoraRED:
         self.potencia=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
         self.potencia.grid(row=8, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
+        self.autonmiaideal=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
+        self.autonmiaideal.grid(row=9, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
+
+        self.autonomíaporcentual=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
+        self.autonomíaporcentual.grid(row=10, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
+
 
 
 
@@ -102,12 +108,13 @@ class calculadoraRED:
         self.btn2 = ttk.Button(self.ibut, text='Convertir',command=self.convertibut, style='Fancy.TButton')
         self.btn2.grid(row=4, column=1, padx=10, pady=10)
         #Button de potencia
-        self.btn2 = ttk.Button(self.ibut, text='Calcular',command=self.convertibut, style='Fancy.TButton')
-        self.btn2.grid(row=4, column=1, padx=10, pady=10)
+        self.btn3 = ttk.Button(self.ibut, text='Calcular',command=self.CalcPotencia, style='Fancy.TButton')
+        self.btn3.grid(row=6, column=1, padx=10, pady=10)
 
      
 
-
+    def CalcPotencia(self):
+        print('potencia')
 
     def Tomavalor(self, valor):
         
