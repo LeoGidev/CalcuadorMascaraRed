@@ -96,10 +96,10 @@ class calculadoraRED:
         self.potencia=Label(self.gif, text='Potencia', background='#414141', foreground='white')
         self.potencia.grid(row=8, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
-        self.autonmiaideal=Label(self.lateral, text='Autonomía Ideal', background='#414141', foreground='white')
+        self.autonmiaideal=Label(self.gif, text='Autonomía Ideal', background='#414141', foreground='white')
         self.autonmiaideal.grid(row=9, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
-        self.autonomíaporcentual=Label(self.lateral, text='Autonomía Porcentual', background='#414141', foreground='white')
+        self.autonomíaporcentual=Label(self.gif, text='Autonomía Porcentual', background='#414141', foreground='white')
         self.autonomíaporcentual.grid(row=10, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
         self.gif_canvas = Canvas(self.gif, bg='#414141', width=250, height=250)
@@ -128,7 +128,7 @@ class calculadoraRED:
 
     def load_and_display_gif(self):
         # Ruta al archivo GIF
-        gif_path = "like.gif"
+        gif_path = "tenkiu.gif"
 
         # Carga el GIF como una secuencia de imágenes
         gif_frames = imageio.get_reader(gif_path)
