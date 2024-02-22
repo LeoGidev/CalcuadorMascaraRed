@@ -215,7 +215,7 @@ class calculadoraRED:
     
     def load_and_display_gif(self):
         # Ruta al archivo GIF
-        gif_path = "tenkiu.gif"
+        gif_path = "like.gif"
 
         # Carga el GIF como una secuencia de imágenes
         gif_frames = imageio.get_reader(gif_path)
