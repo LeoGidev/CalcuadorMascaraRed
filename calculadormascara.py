@@ -122,9 +122,7 @@ class calculadoraRED:
         #Button de potencia
         self.btn3 = ttk.Button(self.lateral, text='Calcular',command=self.CalcPotencia, style='Fancy.TButton')
         self.btn3.grid(row=6, column=0, sticky='e', padx=10, pady=10)
-         #Button de gif
-        self.btn4 = ttk.Button(self.gif, text='gif',command=self.load_and_display_gif, style='Fancy.TButton')
-        self.btn4.grid(row=2, column=0, sticky='e', padx=10, pady=10)
+        
 
     def load_and_display_gif(self):
         # Ruta al archivo GIF
