@@ -127,23 +127,49 @@ class calculadoraRED:
         self.btn4 = ttk.Button(self.gif, text='gif',command=self.load_and_display_gif, style='Fancy.TButton')
         self.btn4.grid(row=2, column=0, sticky='e', padx=10, pady=10)
 
-    
+    def load_and_display_gif(self):
+        # Ruta al archivo GIF
+        gif_path = "like.gif"
+
+        # Carga el GIF como una secuencia de imágenes
+        gif_frames = imageio.get_reader(gif_path)
+
+        # Recorre todas las imágenes y las muestra en el Canvas
+        for i, frame in enumerate(gif_frames):
+            # Convierte el array de píxeles a una imagen de PIL
+            image = Image.fromarray(frame)
+            image = image.resize((150, 150))  # Ajusta el tamaño según tus necesidades
+
+            # Convierte la imagen a un formato compatible con Tkinter
+            tk_image = ImageTk.PhotoImage(image)
+
+            # Configura la imagen en el Canvas
+            self.gif_canvas.create_image(0, 0, anchor=tk.NW, image=tk_image)
+            self.gif_canvas.image = tk_image
+
+            # Actualiza la interfaz gráfica para mostrar el siguiente frame
+            self.root.update_idletasks()
+
+            # Espera un breve periodo para lograr la animación
+            self.root.after(100)  # Ajusta el tiempo de espera según sea necesario
+
 
     def CalcPotencia(self):
         print('potencia')
-        I =int( self.text2.get("1.0", "end-1c"))
+        I = int(self.text2.get("1.0", "end-1c"))
         V = int(self.text3.get("1.0", "end-1c"))
-        P = round(I * V * 0.8, 2)#se redondea al segundo decimal round(numero, 2)
+        P = round(I * V * 0.8, 2)  # se redondea al segundo decimal round(numero, 2)
         print('Potencia:', P)
         self.potencia.config(text=f'Potencia: {P} W')
         Cap = self.banco.get()
-        
+
         Cap = float(Cap)
         Cap = round(Cap)
-        Autonomia= round(Cap/I, 2)
+        Autonomia = round(Cap / I, 2)
         AutReal = round(Autonomia * 0.8, 2)
         self.autonmiaideal.config(text=f'Autonmía ideal = {Autonomia} h')
         self.autonomíaporcentual.config(text=f'Autonomía porcentual(80%) = {AutReal} h')
+        self.load_and_display_gif()
 
 
     def Tomavalor(self, valor):
@@ -213,31 +239,7 @@ class calculadoraRED:
         self.resulibut.delete("1.0", "end")
         self.resulibut.insert("1.0", salida)
     
-    def load_and_display_gif(self):
-        # Ruta al archivo GIF
-        gif_path = "like.gif"
-
-        # Carga el GIF como una secuencia de imágenes
-        gif_frames = imageio.get_reader(gif_path)
-
-        # Recorre todas las imágenes y las muestra en el Canvas
-        for i, frame in enumerate(gif_frames):
-            # Convierte el array de píxeles a una imagen de PIL
-            image = Image.fromarray(frame)
-            image = image.resize((150, 150))  # Ajusta el tamaño según tus necesidades
-
-            # Convierte la imagen a un formato compatible con Tkinter
-            tk_image = ImageTk.PhotoImage(image)
-
-            # Configura la imagen en el Canvas
-            self.gif_canvas.create_image(0, 0, anchor=tk.NW, image=tk_image)
-            self.gif_canvas.image = tk_image
-
-            # Actualiza la interfaz gráfica para mostrar el siguiente frame
-            self.root.update_idletasks()
-
-            # Espera un breve periodo para lograr la animación
-            self.root.after(100)  # Ajusta el tiempo de espera según sea necesario
+    
 
 
     
