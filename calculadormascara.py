@@ -11,7 +11,7 @@ class calculadoraRED:
     def __init__(self, root):
         self.root = root
         self.root.title('Tecnic Assitant')
-        self.root.geometry("900x600")
+        self.root.geometry("860x600")
         self.root.configure(bg='#414141')
         
         #estilos de los frames
