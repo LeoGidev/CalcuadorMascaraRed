@@ -48,8 +48,7 @@ class calculadoraRED:
         self.gif.grid(row=1, column=2, rowspan=4, sticky='ns', padx=10)
 
 
-        # Carga y muestra el gif
-        #self.load_and_display_gif()
+        
         
         
         self.create_widgets()
@@ -92,9 +91,9 @@ class calculadoraRED:
         self.valt=Label(self.lateral, text='45 AH', background='#414141', foreground='white')
         self.valt.grid(row=5, column=1, sticky='w')
 
-        Label(self.lateral, text='Resultados:', background='#414141', foreground='white').grid(row=7, column=0, sticky='w', padx=0, pady=10)
+        Label(self.gif, text='Resultados:', background='#414141', foreground='white').grid(row=7, column=0, sticky='w', padx=0, pady=10)
         
-        self.potencia=Label(self.lateral, text='Potencia', background='#414141', foreground='white')
+        self.potencia=Label(self.gif, text='Potencia', background='#414141', foreground='white')
         self.potencia.grid(row=8, column=0, sticky='w',columnspan=2, padx=10, pady=10 )
 
         self.autonmiaideal=Label(self.lateral, text='Autonomía Ideal', background='#414141', foreground='white')
