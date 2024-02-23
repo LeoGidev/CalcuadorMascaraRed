@@ -20,7 +20,7 @@ class calculadoraRED:
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#414141')
         
-        
+        #configuración de la prioridad para achicar columnas o rows en el resize de la ventana
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)
         self.root.rowconfigure(3, weight=1)
