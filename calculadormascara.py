@@ -9,6 +9,7 @@ import imageio
 
 class calculadoraRED:
     def __init__(self, root):
+        #configuración de ventana
         self.root = root
         self.root.title('Tecnic Assitant')
         self.root.geometry("860x600")
