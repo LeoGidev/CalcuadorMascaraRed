@@ -20,8 +20,8 @@ class calculadoraRED:
         self.root.set_theme('equilux')  
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#414141')
-        #style.configure('Titulo.TLabel', background='#949494', foreground='white', font=('Helvetica', 10))
-
+        
+        
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)
         self.root.rowconfigure(3, weight=1)
