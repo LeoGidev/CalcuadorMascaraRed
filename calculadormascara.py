@@ -56,7 +56,7 @@ class calculadoraRED:
     def create_widgets(self):
         self.create_labels_and_entries()
         self.create_buttons()
-        #self.create_result_frame()
+        
 
     def create_labels_and_entries(self):
         #labels del convertidor de máscara
