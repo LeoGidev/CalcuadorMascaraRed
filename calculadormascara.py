@@ -132,6 +132,10 @@ class calculadoraRED:
         # Carga el GIF como una secuencia de imágenes
         gif_frames = imageio.get_reader(gif_path)
 
+        # Obtiene el tamaño del Canvas
+        canvas_width = self.gif_canvas.winfo_reqwidth()
+        canvas_height = self.gif_canvas.winfo_reqheight()
+
         # Recorre todas las imágenes y las muestra en el Canvas
         for i, frame in enumerate(gif_frames):
             # Convierte el array de píxeles a una imagen de PIL
@@ -142,7 +146,9 @@ class calculadoraRED:
             tk_image = ImageTk.PhotoImage(image)
 
             # Configura la imagen en el Canvas
-            self.gif_canvas.create_image(0, 0, anchor=tk.NW, image=tk_image)
+            canvas_x = (canvas_width - tk_image.width()) // 2  # Centra horizontalmente
+            canvas_y = (canvas_height - tk_image.height()) // 2  # Centra verticalmente
+            self.gif_canvas.create_image(canvas_x, canvas_y, anchor=tk.NW, image=tk_image)
             self.gif_canvas.image = tk_image
 
             # Actualiza la interfaz gráfica para mostrar el siguiente frame
@@ -150,6 +156,7 @@ class calculadoraRED:
 
             # Espera un breve periodo para lograr la animación
             self.root.after(100)  # Ajusta el tiempo de espera según sea necesario
+
 
 
     def CalcPotencia(self):
