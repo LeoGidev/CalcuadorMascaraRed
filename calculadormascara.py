@@ -155,7 +155,7 @@ class calculadoraRED:
             self.root.update_idletasks()
 
             # Espera un breve periodo para lograr la animación
-            self.root.after(100)  # Ajusta el tiempo de espera según sea necesario
+            self.root.after(100)  
 
 
 
