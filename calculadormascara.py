@@ -87,6 +87,7 @@ class calculadoraRED:
         style.configure("TScale.Horizontal.TScale", background="white")
         
         self.banco = ttk.Scale(self.lateral, from_=45, to=200, orient="horizontal", command=self.Tomavalor, style="TScale.Horizontal.TScale")
+        self.banco.set(45)
         self.banco.grid(row=5, column=0, sticky='e', padx=4, pady=10)
         self.valt=Label(self.lateral, text='45 AH', background='#414141', foreground='white')
         self.valt.grid(row=5, column=1, sticky='w')
