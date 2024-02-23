@@ -15,8 +15,7 @@ class calculadoraRED:
         self.root.configure(bg='#414141')
         
         #estilos de los frames
-        style = ttk.Style()
-        
+        style = ttk.Style()        
         self.root.set_theme('equilux')  
         style.configure('barratop.TFrame', background='#414141')
         style.configure('modulo.TFrame', background='#414141')
