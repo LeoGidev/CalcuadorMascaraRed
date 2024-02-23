@@ -11,7 +11,7 @@ class calculadoraRED:
     def __init__(self, root):
         #configuración de ventana
         self.root = root
-        self.root.title('Tecnic Assitant')
+        self.root.title('Tecnic Assistant')
         self.root.geometry("860x600")
         self.root.configure(bg='#414141')
         
